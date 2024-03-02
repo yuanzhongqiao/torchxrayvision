@@ -20,14 +20,7 @@
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">入门</font></font></h2><a id="user-content-getting-started" class="anchor-element" aria-label="永久链接：开始使用" href="#getting-started"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>$ pip install torchxrayvision
 </code></pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="$ pip install torchxrayvision" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+    
   </div></div>
 <div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-s1">torchxrayvision</span> <span class="pl-k">as</span> <span class="pl-s1">xrv</span>
 <span class="pl-k">import</span> <span class="pl-s1">skimage</span>, <span class="pl-s1">torch</span>, <span class="pl-s1">torchvision</span>
@@ -67,52 +60,7 @@
  <span class="pl-s">'Fracture'</span>: <span class="pl-c1">0.51916164</span>,
  <span class="pl-s">'Lung Opacity'</span>: <span class="pl-c1">0.59073937</span>,
  <span class="pl-s">'Enlarged Cardiomediastinum'</span>: <span class="pl-c1">0.27218717</span>}</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import torchxrayvision as xrv
-import skimage, torch, torchvision
-
-# Prepare the image:
-img = skimage.io.imread(&quot;16747_3_1.jpg&quot;)
-img = xrv.datasets.normalize(img, 255) # convert 8-bit image to [-1024, 1024] range
-img = img.mean(2)[None, ...] # Make single color channel
-
-transform = torchvision.transforms.Compose([xrv.datasets.XRayCenterCrop(),xrv.datasets.XRayResizer(224)])
-
-img = transform(img)
-img = torch.from_numpy(img)
-
-# Load model and process image
-model = xrv.models.DenseNet(weights=&quot;densenet121-res224-all&quot;)
-outputs = model(img[None,...]) # or model.features(img[None,...]) 
-
-# Print results
-dict(zip(model.pathologies,outputs[0].detach().numpy()))
-
-{'Atelectasis': 0.32797316,
- 'Consolidation': 0.42933336,
- 'Infiltration': 0.5316924,
- 'Pneumothorax': 0.28849724,
- 'Edema': 0.024142697,
- 'Emphysema': 0.5011832,
- 'Fibrosis': 0.51887786,
- 'Effusion': 0.27805611,
- 'Pneumonia': 0.18569896,
- 'Pleural_Thickening': 0.24489835,
- 'Cardiomegaly': 0.3645515,
- 'Nodule': 0.68982,
- 'Mass': 0.6392845,
- 'Hernia': 0.00993878,
- 'Lung Lesion': 0.011150705,
- 'Fracture': 0.51916164,
- 'Lung Opacity': 0.59073937,
- 'Enlarged Cardiomediastinum': 0.27218717}
-" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+   
   </div></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用预训练模型处理图像的示例脚本是</font></font><a href="https://github.com/mlmed/torchxrayvision/blob/master/scripts/process_image.py"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">process_image.py</font></font></a></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>$ python3 process_image.py ../tests/00000001_000.png
@@ -136,33 +84,7 @@ dict(zip(model.pathologies,outputs[0].detach().numpy()))
            'Pneumothorax': 0.24847917}}
 
 </code></pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="$ python3 process_image.py ../tests/00000001_000.png
-{'preds': {'Atelectasis': 0.50500506,
-           'Cardiomegaly': 0.6600903,
-           'Consolidation': 0.30575264,
-           'Edema': 0.274184,
-           'Effusion': 0.4026162,
-           'Emphysema': 0.5036339,
-           'Enlarged Cardiomediastinum': 0.40989172,
-           'Fibrosis': 0.53293407,
-           'Fracture': 0.32376793,
-           'Hernia': 0.011924741,
-           'Infiltration': 0.5154413,
-           'Lung Lesion': 0.22231922,
-           'Lung Opacity': 0.2772148,
-           'Mass': 0.32237658,
-           'Nodule': 0.5091847,
-           'Pleural_Thickening': 0.5102617,
-           'Pneumonia': 0.30947986,
-           'Pneumothorax': 0.24847917}}
-" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+   
   </div></div>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">型号（</font></font><a href="https://github.com/mlmed/torchxrayvision/blob/master/scripts/xray_models.ipynb"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">演示笔记本</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h2><a id="user-content-models-demo-notebook" class="anchor-element" aria-label="永久链接：模型（演示笔记本）" href="#models-demo-notebook"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">指定预训练模型的权重（当前均为 DenseNet121） 注意：每个预训练模型有 18 个输出。</font><font style="vertical-align: inherit;">该</font></font><code>all</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型的每个输出都经过训练。</font><font style="vertical-align: inherit;">然而，对于其他权重，某些目标未经过训练，并且会随机预测，因为它们不存在于训练数据集中。</font><font style="vertical-align: inherit;">唯一有效的输出列在</font></font><code>{dataset}.pathologies</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据集上与权重对应的字段中。</font></font></p>
