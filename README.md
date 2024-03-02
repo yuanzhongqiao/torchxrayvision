@@ -230,15 +230,7 @@
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为每位患者仅指定 1 个图像</font></font></p>
 <div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">d_kaggle</span> <span class="pl-c1">=</span> <span class="pl-s1">xrv</span>.<span class="pl-s1">datasets</span>.<span class="pl-v">RSNA_Pneumonia_Dataset</span>(<span class="pl-s1">imgpath</span><span class="pl-c1">=</span><span class="pl-s">"..."</span>,
                                                <span class="pl-s1">unique_patients</span><span class="pl-c1">=</span><span class="pl-c1">True</span>)</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="d_kaggle = xrv.datasets.RSNA_Pneumonia_Dataset(imgpath=&quot;...&quot;,
-                                               unique_patients=True)" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+    
   </div></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获取每个数据集的摘要统计数据</font></font></p>
 <div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">d_chex</span> <span class="pl-c1">=</span> <span class="pl-s1">xrv</span>.<span class="pl-s1">datasets</span>.<span class="pl-v">CheX_Dataset</span>(<span class="pl-s1">imgpath</span><span class="pl-c1">=</span><span class="pl-s">"CheXpert-v1.0-small"</span>,
@@ -259,31 +251,7 @@
  <span class="pl-s">'Pneumonia'</span>: {<span class="pl-c1">0.0</span>: <span class="pl-c1">18105</span>, <span class="pl-c1">1.0</span>: <span class="pl-c1">4674</span>},
  <span class="pl-s">'Pneumothorax'</span>: {<span class="pl-c1">0.0</span>: <span class="pl-c1">54165</span>, <span class="pl-c1">1.0</span>: <span class="pl-c1">17693</span>},
  <span class="pl-s">'Support Devices'</span>: {<span class="pl-c1">0.0</span>: <span class="pl-c1">21757</span>, <span class="pl-c1">1.0</span>: <span class="pl-c1">99747</span>}}</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="d_chex = xrv.datasets.CheX_Dataset(imgpath=&quot;CheXpert-v1.0-small&quot;,
-                                   csvpath=&quot;CheXpert-v1.0-small/train.csv&quot;,
-                                 views=[&quot;PA&quot;,&quot;AP&quot;], unique_patients=False)
-
-CheX_Dataset num_samples=191010 views=['PA', 'AP']
-{'Atelectasis': {0.0: 17621, 1.0: 29718},
- 'Cardiomegaly': {0.0: 22645, 1.0: 23384},
- 'Consolidation': {0.0: 30463, 1.0: 12982},
- 'Edema': {0.0: 29449, 1.0: 49674},
- 'Effusion': {0.0: 34376, 1.0: 76894},
- 'Enlarged Cardiomediastinum': {0.0: 26527, 1.0: 9186},
- 'Fracture': {0.0: 18111, 1.0: 7434},
- 'Lung Lesion': {0.0: 17523, 1.0: 7040},
- 'Lung Opacity': {0.0: 20165, 1.0: 94207},
- 'Pleural Other': {0.0: 17166, 1.0: 2503},
- 'Pneumonia': {0.0: 18105, 1.0: 4674},
- 'Pneumothorax': {0.0: 54165, 1.0: 17693},
- 'Support Devices': {0.0: 21757, 1.0: 99747}}" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+  
   </div></div>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">病理面具（</font></font><a href="https://github.com/mlmed/torchxrayvision/blob/master/scripts/xray_masks.ipynb"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">演示笔记本</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h2><a id="user-content-pathology-masks-demo-notebook" class="anchor-element" aria-label="永久链接：病理学面具（演示笔记本）" href="#pathology-masks-demo-notebook"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下数据集中提供了掩模：</font></font></p>
@@ -315,26 +283,7 @@ xrv.datasets.NIH_Dataset() # for Cardiomegaly, Mass, Effusion, ..." tabindex="0"
 <span class="pl-c"># of each pathology will correspond to a mask of that pathology (if it exists).</span>
 <span class="pl-c"># There may be more than one mask per sample. But only one per pathology.</span>
 <span class="pl-s1">sample</span>[<span class="pl-s">"pathology_masks"</span>][<span class="pl-s1">d_rsna</span>.<span class="pl-s1">pathologies</span>.<span class="pl-en">index</span>(<span class="pl-s">"Lung Opacity"</span>)]</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="d_rsna = xrv.datasets.RSNA_Pneumonia_Dataset(imgpath=&quot;stage_2_train_images_jpg&quot;, 
-                                            views=[&quot;PA&quot;,&quot;AP&quot;],
-                                            pathology_masks=True)
-                                            
-# The has_masks column will let you know if any masks exist for that sample
-d_rsna.csv.has_masks.value_counts()
-False    20672
-True      6012       
-
-# Each sample will have a pathology_masks dictionary where the index 
-# of each pathology will correspond to a mask of that pathology (if it exists).
-# There may be more than one mask per sample. But only one per pathology.
-sample[&quot;pathology_masks&quot;][d_rsna.pathologies.index(&quot;Lung Opacity&quot;)]" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+  
   </div></div>
 <p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mlmed/torchxrayvision/master/docs/pathology-mask-rsna2.png"><img src="https://raw.githubusercontent.com/mlmed/torchxrayvision/master/docs/pathology-mask-rsna2.png" alt="" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/mlmed/torchxrayvision/master/docs/pathology-mask-rsna3.png"><img src="https://raw.githubusercontent.com/mlmed/torchxrayvision/master/docs/pathology-mask-rsna3.png" alt="" style="max-width: 100%;"></a></p>
@@ -350,20 +299,7 @@ sample[&quot;pathology_masks&quot;][d_rsna.pathologies.index(&quot;Lung Opacity&
                                   <span class="pl-s1">d2_target</span> <span class="pl-c1">=</span> <span class="pl-c">#target label to predict,</span>
                                   <span class="pl-s1">mode</span><span class="pl-c1">=</span><span class="pl-s">"train"</span>, <span class="pl-c"># train, valid, and test</span>
                                   <span class="pl-s1">ratio</span><span class="pl-c1">=</span><span class="pl-c1">0.9</span>)</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="d = xrv.datasets.CovariateDataset(d1 = # dataset1 with a specific condition
-                                  d1_target = #target label to predict,
-                                  d2 = # dataset2 with a specific condition
-                                  d2_target = #target label to predict,
-                                  mode=&quot;train&quot;, # train, valid, and test
-                                  ratio=0.9)
-" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+    
   </div></div>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">引文</font></font></h2><a id="user-content-citation" class="anchor-element" aria-label="永久链接：引文" href="#citation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TorchXRayVision 主要论文：</font></font><a href="https://arxiv.org/abs/2111.00595" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/2111.00595</font></font></a></p>
@@ -383,28 +319,7 @@ year = {2022}
 }
 
 </code></pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Joseph Paul Cohen, Joseph D. Viviano, Paul Bertin, Paul Morrison, Parsa Torabian, Matteo Guarrera, Matthew P Lungren, Akshay Chaudhari, Rupert Brooks, Mohammad Hashir, Hadrien Bertrand
-TorchXRayVision: A library of chest X-ray datasets and models. 
-Medical Imaging with Deep Learning
-https://github.com/mlmed/torchxrayvision, 2020
-
-
-@inproceedings{Cohen2022xrv,
-title = {{TorchXRayVision: A library of chest X-ray datasets and models}},
-author = {Cohen, Joseph Paul and Viviano, Joseph D. and Bertin, Paul and Morrison, Paul and Torabian, Parsa and Guarrera, Matteo and Lungren, Matthew P and Chaudhari, Akshay and Brooks, Rupert and Hashir, Mohammad and Bertrand, Hadrien},
-booktitle = {Medical Imaging with Deep Learning},
-url = {https://github.com/mlmed/torchxrayvision},
-arxivId = {2111.00595},
-year = {2022}
-}
-" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+    
   </div></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这篇论文启动了该库的开发：</font></font><a href="https://arxiv.org/abs/2002.02497" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/2002.02497</font></font></a></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>Joseph Paul Cohen and Mohammad Hashir and Rupert Brooks and Hadrien Bertrand
@@ -419,24 +334,7 @@ Medical Imaging with Deep Learning 2020 (Online: https://arxiv.org/abs/2002.0249
   url={https://arxiv.org/abs/2002.02497}
 }
 </code></pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Joseph Paul Cohen and Mohammad Hashir and Rupert Brooks and Hadrien Bertrand
-On the limits of cross-domain generalization in automated X-ray prediction. 
-Medical Imaging with Deep Learning 2020 (Online: https://arxiv.org/abs/2002.02497)
-
-@inproceedings{cohen2020limits,
-  title={On the limits of cross-domain generalization in automated X-ray prediction},
-  author={Cohen, Joseph Paul and Hashir, Mohammad and Brooks, Rupert and Bertrand, Hadrien},
-  booktitle={Medical Imaging with Deep Learning},
-  year={2020},
-  url={https://arxiv.org/abs/2002.02497}
-}" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+    
   </div></div>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持者/赞助者</font></font></h2><a id="user-content-supporterssponsors" class="anchor-element" aria-label="永久链接：支持者/赞助商" href="#supporterssponsors"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <table>
